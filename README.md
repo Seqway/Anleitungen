@@ -1,11 +1,14 @@
-<img src="Pics/Under-Construction.png" width="300" height="200"/>
+<center><img src="Pics/Under-Construction.png" width="300"height="200"/></center>
 
 # **COMING SOON**
 # **Seqway.Anleitungen**
 
 ## How-To's from Seqway
 
-Describe your project here
+This is my project only for my How-To's just to define some interesting stuff and share with others who may have some issues.
+
+<span style="color:red">**And here the first Issue is already under preparation (28.12.2020**)</span>
+<span style="color:green">**so coming soon**)</span>
 
 ## How-To
 
@@ -24,7 +27,7 @@ If you like my work, please consider a personal donation
 ## Changelog
 
 ### 0.0.1
-* (Seqway) initial alpha for first tries
+* (Seqway) initial alpha setup for my How-To page
 
 ## License
 MIT License
