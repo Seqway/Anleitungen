@@ -1,17 +1,6 @@
 ![Logo](admin/pvoutputorg.png)
 # Seqway.Anleitungen
 
-[![NPM version](http://img.shields.io/npm/v/iobroker.pvoutputorg.svg)](https://www.npmjs.com/package/iobroker.pvoutputorg)
-[![Downloads](https://img.shields.io/npm/dm/iobroker.pvoutputorg.svg)](https://www.npmjs.com/package/iobroker.pvoutputorg)
-![Number of Installations (latest)](http://iobroker.live/badges/pvoutputorg-installed.svg)
-![Number of Installations (stable)](http://iobroker.live/badges/pvoutputorg-stable.svg)
-[![Dependency Status](https://img.shields.io/david/Seqway/iobroker.pvoutputorg.svg)](https://david-dm.org/Seqway/iobroker.pvoutputorg)
-[![Known Vulnerabilities](https://snyk.io/test/github/Seqway/ioBroker.pvoutputorg/badge.svg)](https://snyk.io/test/github/Seqway/ioBroker.pvoutputorg)
-
-[![NPM](https://nodei.co/npm/iobroker.pvoutputorg.png?downloads=true)](https://nodei.co/npm/iobroker.pvoutputorg/)
-
-**Tests:** ![Test and Release](https://github.com/Seqway/ioBroker.pvoutputorg/workflows/Test%20and%20Release/badge.svg)
-
 ## How-To's from Seqway
 
 Describe your project here
@@ -29,11 +18,6 @@ Please provide your feedback here
 If you like my work, please consider a personal donation  
 (this is an personal Donate link for me - Seqway aka Dirk, no relation to the ioBroker Project !)  
 [![Donate](https://raw.githubusercontent.com/iobroker-community-adapters/ioBroker.sourceanalytix/master/admin/button.png)](http://paypal.me/Seqway)
-
-## What is Sentry.io and what is reported to the servers of that company?
-Sentry.io is a service for developers to get an overview about errors from their applications. And exactly this is implemented in this adapter.
-
-When the adapter crashes or an other Code error happens, this error message that also appears in the ioBroker log is submitted to Sentry. When you allowed iobroker GmbH to collect diagnostic data then also your installation ID (this is just a unique ID **without** any additional infos about you, email, name or such) is included. This allows Sentry to group errors and show how many unique users are affected by such an error. All of this helps me to provide error free adapters that basically never crashs. 
 
 ## Changelog
 
