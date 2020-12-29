@@ -1,7 +1,7 @@
-![](Pics/Under-Construction.png)
-
 # **COMING SOON**
 # **Seqway.Anleitungen**
+
+![](Pics/Under-Construction.png)
 
 ## How-To's from Seqway
 
