@@ -1,7 +1,5 @@
 ![Logo](admin/pvoutputorg.png)
-# How-To's for
-
-## 1. Create VPN connection to Cloud server with Unifi USG and double NAT
+# Create VPN connection to Cloud server with Unifi USG and double NAT
 
 ### Known issues
 
