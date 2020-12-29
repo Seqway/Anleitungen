@@ -1,5 +1,6 @@
-![Logo](admin/pvoutputorg.png)
-# Seqway.Anleitungen
+![Logo](pics/Under-Construction.png)
+# **COMING SOON**
+# **Seqway.Anleitungen**
 
 ## How-To's from Seqway
 
