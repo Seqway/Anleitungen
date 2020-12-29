@@ -1,4 +1,4 @@
-![Logo](Pics/Under-Construction.png)
+![Logo](Pics/Under-Construction.png ':size=10')
 # **COMING SOON**
 # **Seqway.Anleitungen**
 
