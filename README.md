@@ -1,4 +1,4 @@
-<center><img src="Pics/Under-Construction.png" width="300"height="200"/></center>
+![](Pics/Under-Construction.png)
 
 # **COMING SOON**
 # **Seqway.Anleitungen**
@@ -7,8 +7,12 @@
 
 This is my project only for my How-To's just to define some interesting stuff and share with others who may have some issues.
 
-<span style="color:red">**And here the first Issue is already under preparation (28.12.2020**)</span>
-<span style="color:green">**so coming soon**)</span>
+```json
+// And here the first Issue is already under preparation (28.12.2020)
+```
+```json
+// so coming soon
+```
 
 ## How-To
 
