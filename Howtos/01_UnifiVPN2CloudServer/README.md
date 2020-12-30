@@ -7,11 +7,7 @@
 :snowman: still under :construction: :snowman:
 # **Vorwort**
 
-<div class="text-purple">
-Hallo Leute,</div>
-<div class="text-purple">
-  This text is purple, <a href="#" class="text-inherit">including the link</a>
-</div>
+Hallo Leute,
 
 ich habe mich nach langer Zeit mal dazu entschlossen, wie es ist einen externen gemieteten Server in sein eigenes Netzwerk zu integrieren.
 Bisher habe ich mich immer gesträubt, da vernünftige Server als dedicated root Server dann doch schon bei >30€ aufwärts liegen.
@@ -31,6 +27,20 @@ Schon einmal vorher sorry für diese lange bebilderte Anleitung :joy:
 * Gesamter Datenverkehr geht nur über eine VPN Site to Site Verbindung
 * Beide Netzwerke sollen untereinander erreichbar sein um zB einen iobroker auf dem Cloud-Server laufen zu lassen 
 * sämtlicher Datenverkehr in der Could geht über ein zentrales Gateway und hat somit auch Zugang zum Internet. Bei mir ist es eine OPNsnese Firewall
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### Known issues
 
