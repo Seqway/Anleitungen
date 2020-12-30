@@ -1,4 +1,3 @@
-
 # **Create VPN connection to a Cloud server with a Unifi USG3 and double NAT (behind a router)**
 
 ```json
@@ -28,6 +27,33 @@ Schon einmal vorher sorry für diese lange bebilderte Anleitung :joy:
 * Beide Netzwerke sollen untereinander erreichbar sein um zB einen iobroker auf dem Cloud-Server laufen zu lassen 
 * sämtlicher Datenverkehr in der Could geht über ein zentrales Gateway und hat somit auch Zugang zum Internet. Bei mir ist es eine OPNsnese Firewall
 
+# **1.	Vorbereitung des Cloud Servers**
+Ich habe mich für die Hetzner Cloud entschieden und habe dort den einfachsten Server genommen, den es dort gibt. Dort soll einfach nur ein Firewall erstellt werden.
+Dies habe ich Software-technisch mittels OPNsense gelöst – darauf bezieht sich auch meine Beschreibung. Alternativ kann man auch das Iso.Image für einen Mikrotik nehmen - kommt bei mir aber nicht zum Zuge.
+
+Wie das Netzwerk und Subnetze und die Server anzulegen sind, [ist gut hier beschrieben.](https://blog.resch.cloud/2020/05/16/privates-netzwerk-in-der-hetzner-cloud/)
+
+Deswegen gehe ich nicht weiter darauf ein, wie das Hetzner-Netzwerk aufzusetzen ist. 
+ABER bitte nicht das Mikrotech Image einspielen sondern dafür die OPNsense.
+Hat man den Rechner angemietet, so bitte die Funktion des ISO-Images nutzen. Zugangsdaten gibt es per E-Mail (Einmalpassowrt).
+
+[s=]
+![](Pics/01_Bild.png)
+[/s]
+
+Empfehlung Nr. 1 - wie oben beschrieben:
+Da es sein kann, dass man sich mal beim konfigurieren vertut (so wie bei mir) ist es hilfreich einen zweiten Cloudserver aufzusetzen, so wie es auch in der Anleitung im Link steht und damit dann die OPNsense zu administrieren. Über das Web-Interface bei Hetzner kommt man IMMER an diesen Rechner dran !
+Mich hat das für 4 Tage keine 50 Cent gekostet, da Hetzner Stundengenau abrechnet 
+
+Empfehlung Nr.2 – erstmal Internetzugang sperren und alles über VPN machen!
+
+Dazu erstmal auf dem OPNsense Server die LAN Netzwerkkarte abschalten! 
+WAN Interface setzen.
+
+Bitte auf die Konsole gehen:
+02_Bild
+Login Daten eingeben (Login plus Passwort)
+Bitte dann Option 1 wählen und durch den GUIDE gehen und nur WAN setzen auf vtnet0. LAN bitte leer lassen. Wird später konfiguriert.
 
 
 
