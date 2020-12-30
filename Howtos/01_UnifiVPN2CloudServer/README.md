@@ -37,9 +37,9 @@ Deswegen gehe ich nicht weiter darauf ein, wie das Hetzner-Netzwerk aufzusetzen 
 ABER bitte nicht das Mikrotech Image einspielen sondern dafür die OPNsense.
 Hat man den Rechner angemietet, so bitte die Funktion des ISO-Images nutzen. Zugangsdaten gibt es per E-Mail (Einmalpassowrt).
 
-[s=]
+<details>
 ![](Pics/01_Bild.png)
-[/s]
+</details>
 
 Empfehlung Nr. 1 - wie oben beschrieben:
 Da es sein kann, dass man sich mal beim konfigurieren vertut (so wie bei mir) ist es hilfreich einen zweiten Cloudserver aufzusetzen, so wie es auch in der Anleitung im Link steht und damit dann die OPNsense zu administrieren. Über das Web-Interface bei Hetzner kommt man IMMER an diesen Rechner dran !
