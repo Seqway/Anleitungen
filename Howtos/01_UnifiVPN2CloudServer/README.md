@@ -35,28 +35,83 @@ Wie das Netzwerk und Subnetze und die Server anzulegen sind, [ist gut hier besch
 
 Deswegen gehe ich nicht weiter darauf ein, wie das Hetzner-Netzwerk aufzusetzen ist. 
 ABER bitte nicht das Mikrotech Image einspielen sondern dafür die OPNsense.
-Hat man den Rechner angemietet, so bitte die Funktion des ISO-Images nutzen. Zugangsdaten gibt es per E-Mail (Einmalpassowrt).
+Hat man den Rechner angemietet, so bitte die Funktion des ISO-Images nutzen. Zugangsdaten gibt es per E-Mail (Einmalpasswort).
 
 <details>
-<summary>Click to expand</summary>
+<summary>Click to expand - Bild 01</summary>
 
 ![](Pics/01_Bild.png)
 
 </details>
 
-Empfehlung Nr. 1 - wie oben beschrieben:
-Da es sein kann, dass man sich mal beim konfigurieren vertut (so wie bei mir) ist es hilfreich einen zweiten Cloudserver aufzusetzen, so wie es auch in der Anleitung im Link steht und damit dann die OPNsense zu administrieren. Über das Web-Interface bei Hetzner kommt man IMMER an diesen Rechner dran !
-Mich hat das für 4 Tage keine 50 Cent gekostet, da Hetzner Stundengenau abrechnet 
+**Empfehlung Nr. 1 - wie oben beschrieben:**
 
-Empfehlung Nr.2 – erstmal Internetzugang sperren und alles über VPN machen!
+Da es sein kann, dass man sich mal bei dem Konfigurieren irgendwie mal verhaut (so wie bei mir :stuck_out_tongue_winking_eye:) ist es hilfreich einen zweiten Cloudserver aufzusetzen, so wie es auch in der Anleitung im Link steht und damit dann die OPNsense zu administrieren. Über das Konsolen-Interface bei Hetzner kommt man IMMER an diesen Rechner dran ! Ich habe ein Ubuntu / Debian System genommen mit einer Oberfläche, so dass ich ohne Probleme über die Hetzner Konsole auf die GUI zugreifen und einen Browser öffnen konnte.
+Mich hat das für 4 Tage keine 50 Cent gekostet, da Hetzner Stundengenau abrechnet :+1 Länger brauchte ich den zweiten Rechner nicht - danach habe ich diesen gelöscht und meinen richtigen Cloud-Server aufgesetzt.
+
+**Empfehlung Nr.2 – erstmal Lan-Zugang sperren und alles über VPN machen!**
 
 Dazu erstmal auf dem OPNsense Server die LAN Netzwerkkarte abschalten! 
 WAN Interface setzen.
 
 Bitte auf die Konsole gehen:
-02_Bild
-Login Daten eingeben (Login plus Passwort)
-Bitte dann Option 1 wählen und durch den GUIDE gehen und nur WAN setzen auf vtnet0. LAN bitte leer lassen. Wird später konfiguriert.
+
+<details>
+<summary>Click to expand - Bild 02</summary>
+
+![](Pics/02_Bild.png)
+
+</details>
+
+Login Daten eingeben (Login plus Passwort - einmalig per Email bekommen)
+
+Bitte dann Option 1 wählen und durch den GUIDE gehen und nur WAN setzen auf vtnet0. 
+
+LAN bitte leer lassen. Wird später konfiguriert.
+
+# **2.	VPN Verbindung aufbauen**
+
+So nun hat man die OPNsense am laufen und nur das LAN aktiviert – bei mir ist es die Schnittstelle vtnet1.
+Vtnet0 ist abgeschaltet und hat momentan KEINE Verbindung - wird später dazu geschaltet.
+
+Es gibt natürlich die Möglichkeit manuell immer die OpenVPN Verbindung aufzubauen allerdings meiner Meinung nicht geeignet für 24/7 Datenaustausch.
+
+Dies geht allerdings sehr einfach in dem man die OpenVPN Verbindung manuell in der OPNsense erstellt und sich das *.ovpn File herunterlädt und in seinem Heimnetzwerk dann mittels OpenVPN Programm importiert.
+
+Die Site to Site Verbindung ist komplexer insb. weil die USG D-NAT hat, worum es ja auch hier in diesem Manual / Guide geht. 
+
+Warum ? Bei dieser Konstellation hat man IMMER an der WAN-Schnittstelle die interne IP anliegen und gar niemals die externe, was natürlich für die VPN Verbindung ein Problem ist.
+
+Was nun :question::question::question:
+
+Da meiner Meinung nach die Dokumentation von Unifi echt verbesserungswürdig ist, habe ich alles nur durch trial and error herausbekommen – leider. Aber nun gut jetzt läuft es ja :+1:
+
+Gut was ist nahe liegend um eine site2site Verbindung aufzumachen? Ja klar IPsec!
+Nach Langem hin und her ist es bei einem D-NAT **NICHT** möglich (out of the box) eine IPsec Verbindung aufzubauen. Möglicherweise ist es möglich, aber da muss man auf der USG die json ordentlich verbiegen was für mich schlichtweg keine Option war.
+
+Also scheidet die Möglichkeit IPsec aus!
+
+Was gibt es noch? Nun, ich kann ja den Radius Server von der USG benutzen und mache eine L2TP Verbindung auf! Okay dann mal los.
+
+Nach langen herumprobieren :walking: Boing ein zweites Mal in die Sackgasse gerannt! 
+
+Warum ? 
+
+Bei L2TP MUSS ich die Ports UDP 500 und 4500 Port forwarden WAS ABER NICHT GEHT!
+Dies lässt die USG schlichtweg nicht zu.
+
+Unter Troubleshooting auf der offiziellen UI Seite heißt es dann auch:
+
+„…It is not possible to forward UDP port 500 and UDP port 4500 to a device and use them for the L2TP VPN on the USG/UDM at the same time. ..”
+
+[Nachzulesen hier.](https://help.ui.com/hc/en-us/articles/360002668854)
+
+Als ich die Regel angelegt hatte gab es auch eine Fehlermeldung und es ist einfach nicht möglich!
+
+Gut als alle guter Dinge sind DREI :dancers:
+
+Es bleibt nur noch OpenVPN übrig um die Site to Site Verbindung zu erstellen!
+Dies beschreibe ich im nächsten Kapitel.
 
 
 
