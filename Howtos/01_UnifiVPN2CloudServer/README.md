@@ -71,7 +71,7 @@ LAN bitte leer lassen. Wird später konfiguriert.
 
 # **2.	VPN Verbindung aufbauen**
 
-So nun hat man die OPNsense am laufen und nur das LAN aktiviert – bei mir ist es die Schnittstelle vtnet1.
+So nun hat man die OPNsense am laufen und nur das WAN ist aktiviert – bei mir ist es die Schnittstelle vtnet1.
 Vtnet0 ist abgeschaltet und hat momentan KEINE Verbindung - wird später dazu geschaltet.
 
 Es gibt natürlich die Möglichkeit manuell immer die OpenVPN Verbindung aufzubauen allerdings meiner Meinung nicht geeignet für 24/7 Datenaustausch.

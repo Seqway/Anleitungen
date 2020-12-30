@@ -25,7 +25,7 @@ Please provide your feedback here
 
 ## Support me
 If you like my work, please consider a personal donation  
-(this is an personal Donate link for me - Seqway aka Dirk, no relation to the ioBroker Project !)  
+(this is an personal Donate link for me - Seqway aka Dirk)  
 [![Donate](https://raw.githubusercontent.com/iobroker-community-adapters/ioBroker.sourceanalytix/master/admin/button.png)](http://paypal.me/Seqway)
 
 ## Changelog
