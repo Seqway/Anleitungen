@@ -38,7 +38,10 @@ ABER bitte nicht das Mikrotech Image einspielen sondern dafür die OPNsense.
 Hat man den Rechner angemietet, so bitte die Funktion des ISO-Images nutzen. Zugangsdaten gibt es per E-Mail (Einmalpassowrt).
 
 <details>
+<summary>Click to expand</summary>
+
 ![](Pics/01_Bild.png)
+
 </details>
 
 Empfehlung Nr. 1 - wie oben beschrieben:
