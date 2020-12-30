@@ -4,9 +4,12 @@
 ```json
 // And here the first Manual under preparation - updating nearly daily
 ```
-still under :construction:
+:snowman: still under :construction: :snowman:
 # **Vorwort**
+
+<div class="text-purple">
 Hallo Leute,
+</div>
 
 ich habe mich nach langer Zeit mal dazu entschlossen, wie es ist einen externen gemieteten Server in sein eigenes Netzwerk zu integrieren.
 Bisher habe ich mich immer gesträubt, da vernünftige Server als dedicated root Server dann doch schon bei >30€ aufwärts liegen.
