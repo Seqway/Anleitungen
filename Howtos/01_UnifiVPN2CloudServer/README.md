@@ -8,7 +8,9 @@
 # **Vorwort**
 
 <div class="text-purple">
-Hallo Leute,
+Hallo Leute,</div>
+<div class="text-purple">
+  This text is purple, <a href="#" class="text-inherit">including the link</a>
 </div>
 
 ich habe mich nach langer Zeit mal dazu entschlossen, wie es ist einen externen gemieteten Server in sein eigenes Netzwerk zu integrieren.
