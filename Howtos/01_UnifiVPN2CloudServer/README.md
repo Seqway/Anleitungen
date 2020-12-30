@@ -1,18 +1,20 @@
 
-# **Create VPN connection to Cloud server with Unifi USG and double NAT**
+# **Create VPN connection to a Cloud server with a Unifi USG3 and double NAT (behind a router)**
 
 ```json
-// And here the first Issue is already under preparation (28.12.2020)
+// And here the first Manual under preparation - updating nearly daily
 ```
-```json
-// so coming soon
-```
+
+# **Vorwort**
+Diese Beschreibung....
 
 ### Known issues
 
-(still) to do or to update
+- updating nearly daily
+- first version is german explanation
+- english version will follow
 
 ### Changelog
 
 ### 0.0.1
-* (Seqway) initial alpha for preparation of first How-To
+* (Seqway) initial alpha version in german

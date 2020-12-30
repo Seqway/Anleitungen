@@ -1,20 +1,20 @@
 # **COMING SOON**
-# **Seqway.Anleitungen**
+# **Seqway.Manuals**
 
 ![](Pics/Under-Construction.png)
 
-## How-To's from Seqway
+## Manuals / Instruction / Guide Books from Seqway
 
-This is my project only for my How-To's just to define some interesting stuff and share with others who may have some issues.
+This is my project only for my Guide Books just to define some interesting stuff and share with others who may have same issues.
 
 ```json
-// And here the first Issue is already under preparation (28.12.2020)
+// And here the first Manual is already under preparation (28.12.2020)
 ```
 ```json
 // so coming soon
 ```
 
-## How-To
+## Manual
 
 Please provide your feedback here
 
