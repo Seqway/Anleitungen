@@ -20,6 +20,13 @@ Diese Konstellation werden denke ich viele möglicherweise haben, die die Box de
 Da auch die Konfiguration des Hetzner Netzwerkes sowie der USG und des internen / externen Datenverkehrs nicht einfach mal trivial ist schreibe ich alles zusammen und somit ist dieses Manual entstanden.
 Schon einmal vorher sorry für diese lange bebilderte Anleitung :joy:
 
+# **Aufbau**
+* Cloud Server mit IP-Adresse zzz.zz.z.z (hier beispielhaft 172iger Bereich)
+* Unifi USG hinter Fritzbox (Exposed Host) und somit Doppel-NAT (ganz wichtig bei dieser Konfiguration, da Doppel-NAT für die USG nicht so einfach zu händeln ist) mit IP-Adresse xxx.xxx.xx.x (hier beispielhaft 192iger Bereich)
+* Gesamter Datenverkehr geht nur über eine VPN Site to Site Verbindung
+* Beide Netzwerke sollen untereinander erreichbar sein um zB einen iobroker auf dem Cloud-Server laufen zu lassen 
+* sämtlicher Datenverkehr in der Could geht über ein zentrales Gateway und hat somit auch Zugang zum Internet. Bei mir ist es eine OPNsnese Firewall
+
 ### Known issues
 
 - updating nearly daily
