@@ -9,7 +9,11 @@ This is my project only for my Guide Books just to define some interesting stuff
 
 First Manual (31.12.2020):
 
-[Create VPN connection to a Cloud server with a Unifi USG3 and double NAT (behind a router)](https://github.com/Seqway/Anleitungen/tree/main/Howtos/01_UnifiVPN2CloudServer)<br>
+:one: :white_check_mark: [Create VPN connection to a Cloud server with a Unifi USG3 and double NAT (behind a router)](https://github.com/Seqway/Anleitungen/tree/main/Howtos/01_UnifiVPN2CloudServer)<br>
+
+:two: :x: [Create VPN connection to a Cloud server with a Unifi USG3 and double NAT (behind a router)](https://github.com/Seqway/Anleitungen/tree/main/Howtos/02_Update%20Influx%20to%202.x)<br>
+
+:three: pending
 
 [All Manuals](https://github.com/Seqway/Anleitungen/tree/main/Howtos)
 
