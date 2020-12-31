@@ -7,9 +7,11 @@
 
 This is my project only for my Guide Books just to define some interesting stuff and share with others who may have same issues.
 
-```json
-// And here the first Manual (31.12.2020)
-```
+First Manual (31.12.2020):
+
+[Create VPN connection to a Cloud server with a Unifi USG3 and double NAT (behind a router)](https://github.com/Seqway/Anleitungen/tree/main/Howtos/01_UnifiVPN2CloudServer)<br>
+
+[All Manuals](https://github.com/Seqway/Anleitungen/tree/main/Howtos)
 
 ## Manual
 
