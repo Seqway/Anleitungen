@@ -1,17 +1,14 @@
-# **COMING SOON**
+# **READY - ONLINE**
 # **Seqway.Manuals**
 
-![](Pics/Under-Construction.png)
+:clap: :green_book: :green_book: :green_book: :clap:
 
 ## Manuals / Instruction / Guide Books from Seqway
 
 This is my project only for my Guide Books just to define some interesting stuff and share with others who may have same issues.
 
 ```json
-// And here the first Manual is already under preparation (28.12.2020)
-```
-```json
-// so coming soon
+// And here the first Manual (31.12.2020)
 ```
 
 ## Manual
@@ -31,7 +28,7 @@ If you like my work, please consider a personal donation
 ## Changelog
 
 ### 0.0.1
-* (Seqway) initial alpha setup for my How-To page
+* (Seqway) official release
 
 ## License
 MIT License

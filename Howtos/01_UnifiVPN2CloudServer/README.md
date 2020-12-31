@@ -1,9 +1,9 @@
 # **Create VPN connection to a Cloud server with a Unifi USG3 and double NAT (behind a router)**
 
 ```json
-// And here the first Manual under preparation - updating nearly daily
+// And here the first Manual - updating on request !
 ```
-:snowman: still under :construction: :snowman:
+:snowman: :clap: First Manual ! :clap: :snowman:
 # **Vorwort**
 
 Hallo Leute,
@@ -338,6 +338,38 @@ und erst jetzt auf APPLY drücken!
 
 Das wars dann doch schon :joy::joy::joy:
 
+# **6. Hier noch ein paar Test ob jetzt wirklich sämtlicher Datenverkehr geht:**
+
++ Ping aus dem Heimnetz ins Cloud Netzwerk testen
++ Ping aus dem Cloud Netzwerk ins Heimnetzwerk testen
++ Ping nach extern testen
++ Am besten nutzt man dazu „mtr“
+
+    mtr google.com sowie mtr „private Adresse“
+	Sollte dann irgendwie so aussehen:
+
+    <details>
+<summary>Click to expand - Bild 18</summary>
+
+![](Pics/30_Bild.png)
+
+</details><br>
+
+<details>
+<summary>Click to expand - Bild 19</summary>
+
+![](Pics/31_Bild.png)
+
+</details><br>
+
+Per Hetzner Konsole kann noch überprüft werden ob die externe IP angegeben wird:
+
+<code>wget -O - -q icanhazip.com</code>
+<br>
+<br>
+<br>
+<br>
+
 
 
 
@@ -356,7 +388,12 @@ Das wars dann doch schon :joy::joy::joy:
 - first version is german explanation
 - english version will follow
 
-### Changelog
+## Support me
+If you like my work, please consider a personal donation  
+(this is an personal Donate link for me - Seqway aka Dirk)  
+[![Donate](https://raw.githubusercontent.com/iobroker-community-adapters/ioBroker.sourceanalytix/master/admin/button.png)](http://paypal.me/Seqway)
+
+## Changelog
 
 ### 0.0.1
-* (Seqway) initial alpha version in german
+* (Seqway) official release
