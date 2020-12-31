@@ -13,7 +13,7 @@ First Manual (31.12.2020):
 
 :two: :x: [CHow to upgrade InfluxDB from 1.8.x to 2.0.x (in preparation)](https://github.com/Seqway/Anleitungen/tree/main/Howtos/02_Update%20Influx%20to%202.x)<br>
 
-:3: pending
+:three: pending
 
 [All Manuals](https://github.com/Seqway/Anleitungen/tree/main/Howtos)
 
