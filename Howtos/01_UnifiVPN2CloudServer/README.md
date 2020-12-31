@@ -61,7 +61,7 @@ Bitte auf die Konsole gehen:
 
 ![](Pics/02_Bild.png)
 
-</details>
+</details><br>
 
 Login Daten eingeben (Login plus Passwort - einmalig per Email bekommen)
 
@@ -73,6 +73,13 @@ LAN bitte leer lassen. Wird später konfiguriert.
 
 So nun hat man die OPNsense am laufen und nur das WAN ist aktiviert – bei mir ist es die Schnittstelle vtnet1.
 Vtnet0 ist abgeschaltet und hat momentan KEINE Verbindung - wird später dazu geschaltet.
+
+<details>
+<summary>Click to expand - Bild 03</summary>
+
+![](Pics/03_Bild.png)
+
+</details><br>
 
 Es gibt natürlich die Möglichkeit manuell immer die OpenVPN Verbindung aufzubauen allerdings meiner Meinung nicht geeignet für 24/7 Datenaustausch.
 
@@ -113,6 +120,223 @@ Gut als alle guter Dinge sind DREI :dancers:
 Es bleibt nur noch OpenVPN übrig um die Site to Site Verbindung zu erstellen!
 Dies beschreibe ich im nächsten Kapitel.
 
+# **3.	Konfiguration der OpenVPN Verbindung auf der USG mittels Unifi Controller**
+
+Geht nach
+
+<code>**Einstellungen - Netzwerk - Neues Netzwerk**</code>
+
+erstellen
+
+<details>
+<summary>Click to expand - Bild 04</summary>
+
+![](Pics/04_Bild.png)
+
+</details><br>
+
+Bitte bedenken, dass der Pre Shared key vom Server (Unifi Controller) später hierhin kopiert werden muss!
+Und zwar ohne Leerzeichen / Zeilenumbrüche / Absätze – einfach ein sehr langer String !
+
+[Auch noch einmal alles hier gut nachzulesen.](
+https://help.ui.com/hc/en-us/articles/360002426234-UniFi-USG-VPN-How-to-Configure-Site-to-Site-VPN#6)
+
+
+Wer will kann sich (später) per ssh auf die USG einloggen und sich das Live Log anschauen – damit konnte ich sehr gut Fehler analysieren ob und wie die VPN Verbindung aufgebaut wird!
+[Ist auch hier beschrieben.](
+https://help.ui.com/hc/en-us/articles/204959834-UniFi-How-to-View-Log-Files)
+
+Ich habe 
+<code>tail -f /var/log/messages </code>
+genutzt
+
+# **4. OpenVPN erzeugen auf der OPNsense**
+Setze den OpenVPN Server auf. Gehe zu:
+
+<code>VPN - OpenVPN - Servers - ADD</code>
+
+<details>
+<summary>Click to expand - Bild 05</summary>
+
+![](Pics/20_Bild.png)
+
+</details>
+
+<details><br>
+
+<summary>Click to expand - Bild 06</summary>
+
+![](Pics/21_Bild.png)
+
+</details><br>
+
+Zum Testen, ob die Verbindung steht am besten unter 
+
+<code>VPN - OpenVPN - Connection Status</code>
+
+Oder
+
+<code>VPN - OpenVPN - Log File</code>
+
+Schauen, welche Meldungen kommen. Ich habe den Verbose Level dafür auf Stufe 6 gesetzt, dann sieht man am meisten:
+
+<details>
+<summary>Click to expand - Bild 07</summary>
+
+![](Pics/22_Bild.png)
+
+</details><br>
+
+Wenn die Verbindung erfolgreich war dann sieht es unter Connection Status so aus:
+
+<details>
+<summary>Click to expand - Bild 08</summary>
+
+![](Pics/23_Bild.png)
+
+</details><br>
+
+Am schwierigsten war es hier für die USG die Standard encryption herauszufinden. 
+
+Per default verwendet die USG3 anscheinend hier die Encryption BF-CBC 128-bit sowie den ADA von SHA1 (160-bit).
+
+Leider habe ich noch nicht herausgefunden, wie diese Verbindung hochzuschrauben ist um zB 256-Bit zu nutzen.
+
+Auch der Support hat mir bisher keine Antwort darauf gegeben! (update wird folgen!)
+
+Jetzt noch ein paar Firewall regeln um den Traffic zu koordinieren und dann kann es zum nächsten Punkt gehen.
+
+# **5. Auf geht’s zur OPNsense Konfiguration**
+
+Ich habe mich meistens auf dem zweiten Rechner per Hetzner Konsole verbunden (Installiert habe ich ein Ubuntu mit dem Standard Desktop) und von dort die OPNsense aufgerufen.
+
+<code>https://172.20.0.2</code>
+
+Beim erstmaligen Aufruf einfach dem Guide folgen und in Schritt 4 einfach noch die Option **NICHT** ankreuzen
+
+<code>Block bogon networks</code>
+
+Nun gehen wir zu
+
+<code>Interface - Assignments</code>
+
+und fügen das Interface **vtnet1** hinzu – sieht dann so aus:
+
+<details>
+<summary>Click to expand - Bild 09</summary>
+
+![](Pics/05_Bild.png)
+
+</details><br>
+
+Nun gehen wir nach
+
+<code>Interface - LAN</code>
+
+Bitte einfach auf 
+
+IPv4 Configuration Type auf DHCP setzen und das Interface ankreuzen (Enable interface).
+
+<details>
+<summary>Click to expand - Bild 10</summary>
+
+![](Pics/06_Bild.png)
+
+</details><br>
+
+:exclamation:**ACHTUNG:**:exclamation:
+Bevor die Regeln nur APLLIED werden bitte VORHER NOCH DAS HIER MACHEN:
+
+<code>System  Routes  Configuration</code>
+
+Neue Route – sieht dann so aus:
+
+<details>
+<summary>Click to expand - Bild 11</summary>
+
+![](Pics/07_Bild.png)
+
+</details><br>
+07_Bild
+
+Nun können die Regeln von oben bestätigt werden!
+
+(Hinweis – Hetzner liefert den DHCP selber auf der 1er Nummer, daher immer beim Netzwerk bei 2 anfangen. Ebenso managed Hetzner den DHCP nach draußen – hier eine 172.31.iger Nummer!)
+
+Gehe nach
+
+<code>Interfaces - Settings</code> 
+
+und hake zusätzlich die Option „Disable hardware checksum offload“ an:
+
+<details>
+<summary>Click to expand - Bild 12</summary>
+
+![](Pics/08_Bild.png)
+
+</details><br>
+
+Nun nach 
+
+<code>Firewall - NAT - Outbound</code> 
+
+gehen. Die Option „Hybrid Outbound NAT rule generation” anhaken:
+
+<details>
+<summary>Click to expand - Bild 14</summary>
+
+![](Pics/09_Bild.png)
+
+</details><br>
+
+Folgendes mapping dort erstellen und abspeichern ABER NOCH NICHT Apply drücken, das sieht dann so aus:
+
+<details>
+<summary>Click to expand - Bild 15</summary>
+
+![](Pics/10_Bild.png)
+
+</details><br>
+
+Nur auf SAVE klicken.
+
+Gehe zu 
+
+<code>Firewall - Rules - LAN</code> 
+
+und editiere oder lege eine neue Regel an falls nicht vorhanden (Description = Default allow LAN to any rule):
+
+<details>
+<summary>Click to expand - Bild 16</summary>
+
+![](Pics/11_Bild.png)
+
+</details><br>
+
+Nun können die Sachen APPLIED werden!
+
+Gehe zu
+
+<code>Firewall  Rules  WAN</code>
+
+Und lege eine neue Regel an – sieht dann so aus:
+
+<details>
+<summary>Click to expand - Bild 17</summary>
+
+![](Pics/12_Bild.png)
+
+</details><br>
+
+Save und Apply drücken !
+
+Nun zurückgehen auf 
+
+<code>Firewall - NAT - Outbound</code>
+
+und erst jetzt auf APPLY drücken!
+
+Das wars dann doch schon :joy::joy::joy:
 
 
 

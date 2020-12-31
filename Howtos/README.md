@@ -8,7 +8,8 @@
 # **Manual / Instruction / Guide Book for**
 
 ## 1. Create VPN connection to Cloud server with Unifi USG and double NAT
-### 2. Pending
+### 2. How to upgrade InfluxDB from 1.8.x to 2.0.x
+### 3. Pending
 
 ## Known issues
 
