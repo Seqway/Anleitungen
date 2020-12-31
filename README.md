@@ -11,9 +11,9 @@ First Manual (31.12.2020):
 
 :one: :white_check_mark: [Create VPN connection to a Cloud server with a Unifi USG3 and double NAT (behind a router)](https://github.com/Seqway/Anleitungen/tree/main/Howtos/01_UnifiVPN2CloudServer)<br>
 
-:two: :x: [Create VPN connection to a Cloud server with a Unifi USG3 and double NAT (behind a router)](https://github.com/Seqway/Anleitungen/tree/main/Howtos/02_Update%20Influx%20to%202.x)<br>
+:two: :x: [CHow to upgrade InfluxDB from 1.8.x to 2.0.x (in preparation)](https://github.com/Seqway/Anleitungen/tree/main/Howtos/02_Update%20Influx%20to%202.x)<br>
 
-:three: pending
+:3: pending
 
 [All Manuals](https://github.com/Seqway/Anleitungen/tree/main/Howtos)
 
