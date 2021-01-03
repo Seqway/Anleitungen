@@ -1,28 +1,10 @@
-# **Grafana - more than one value and doing math operations**
+# **How to upgrade InfluxDB from a previous version 1.8.x to the new 2.0.x version**
 
 ```json
 // Manual under preparation :construction::construction::construction:
 ```
 :snowman: :snowman:
-# **Introduction**
-
-There is one general rules while operating with databases:
-
-If you have the VALUE that you need available but you need to make methematical operations than try to do it directly in Grafana rather then to write a script and put a new datapoint into your database.
-
-Therefore i make an example where you have two different values (metrics) and want to have a third one while adding or subtracting them from each other !
-
-I make it on the example of a solar power unit!
-
-# **Usecase - Solar Power**
-
-1. you have an value of the produced (solar) power actually
-2. You have your current load of power demand e.g. from your house
-3. Substract power house consumption from your produced power from solar unit to see when i have to buy power from my power supplier
-
-Choose your two datapoints
-
-![](Pics/twovalues.png)
+# **Vorwort**
 
 ## Known issues
 
