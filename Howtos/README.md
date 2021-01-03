@@ -6,7 +6,8 @@
 
 ### :white_check_mark: [1. Create VPN connection to Cloud server with Unifi USG and double NAT (ready)](https://github.com/Seqway/Anleitungen/tree/main/Howtos/01_UnifiVPN2CloudServer)
 ### :x: 2. How to upgrade InfluxDB from 1.8.x to 2.0.x (in preparation)
-### :x: 3. Pending
+### :white_check_mark: 3. Grafana - more than one value and doing math operations
+### :x: 4. Pending
 
 ## Known issues
 
