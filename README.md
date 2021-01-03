@@ -37,7 +37,7 @@ If you like my work, please consider a personal donation
 
 ### 0.0.2
 * (Seqway) official release
-    uploaded second manual :two: (03.01.2021)
+    uploaded manual :three: (03.01.2021)
 
     upgraded Manual :one:
 
