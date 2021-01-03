@@ -1,5 +1,5 @@
 ```json
-// And here the first Manual / Instruction (31.12.2020)
+// And here are the first Manuals / Instructions
 ```
 
 # **Manual / Instruction / Guide Book for**

@@ -35,8 +35,15 @@ If you like my work, please consider a personal donation
 
 ## Changelog
 
+### 0.0.2
+* (Seqway) official release
+    uploaded second manual :two: (03.01.2021)
+
+    upgraded Manual :one:
+
 ### 0.0.1
 * (Seqway) official release
+    uploaded first manual :one: (31.12.2020)
 
 ## License
 MIT License

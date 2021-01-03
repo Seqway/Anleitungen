@@ -1,8 +1,5 @@
 # **Grafana - more than one value and doing math operations**
 
-```json
-// Manual under preparation :construction::construction::construction:
-```
 :snowman: :snowman:
 # **Introduction**
 
