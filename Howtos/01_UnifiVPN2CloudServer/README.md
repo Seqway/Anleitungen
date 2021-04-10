@@ -371,11 +371,63 @@ Per Hetzner Konsole kann noch überprüft werden ob die externe IP angegeben wir
 <br>
 
 
+# **7. Netzwerk-Einstellungen für Hetzner Cloud Server:**
 
++ Einstellungen für die Interfaces
++ Einstellungen netplan
 
+Interfaces:
+hier die Einstellungen
 
+```
+sudo nano /etc/network/interfaces
+```
 
+```
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
 
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+# allow-hotplug ens10
+# iface ens10 inet static
+#       address 172.20.0.3/24
+#       gateway 172.20.0.1
+#       # dns-* options are implemented by the resolvconf package, if installed
+#       dns-nameservers 213.133.100.100 213.133.99.99 213.133.98.98
+auto ens10
+iface ens10 inet dhcp
+        post-up ip route add default via 172.20.0.1
+dns-nameservers 213.133.100.100 213.133.99.99 213.133.98.98
+```
+
+Und hier netplan - aufpassen auf das Einrücken!:
+
+```
+sudo nano /etc/netplan/01-netcfg.yaml
+```
+
+```
+# This file describes the network interfaces available on your system
+# For more information, see netplan(5).
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    ens10:
+      dhcp4: true
+      nameservers:
+        addresses: [213.133.100.100]
+      routes:
+        - to: 0.0.0.0/0
+          via: 172.20.0.1
+          on-link: true
+```
 
 
 
