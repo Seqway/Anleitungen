@@ -1,4 +1,4 @@
-# **How to upgrade InfluxDB from a previous version 1.8.x to the new 2.0.x version**
+# **How to configure Doorbird Adapter**
 
 ```json
 // Manual under preparation :construction::construction::construction:
