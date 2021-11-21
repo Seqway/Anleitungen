@@ -1,0 +1,6 @@
+{
+  "ioBrokerUrl": "http://192.168.40.7",
+  "socketIoPort": 8081,
+  "scriptRoot": "/",
+  "adminVersion": "admin5"
+}
